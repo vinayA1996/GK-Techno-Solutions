@@ -5,4 +5,18 @@ import { Component } from '@angular/core';
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
-export class ContactComponent {}
+export class ContactComponent {
+  formData = {
+    name: '',
+    email: '',
+    mobile: '',
+    message: '',
+  };
+
+  submitForm(form: any) {
+    if (form.valid) {
+      // Do something with the form data, e.g., send it to a server
+      console.log(this.formData);
+    }
+  }
+}

@@ -1,1 +1,88 @@
-<p>contact works!</p>
+<br />
+
+<div class="container">
+  <h1>Contact US</h1>
+  <br />
+  <form
+    #contactForm="ngForm"
+    (ngSubmit)="submitForm(contactForm)"
+    class="form-container"
+  >
+    <mat-form-field class="full-width" appearance="fill">
+      <input
+        matInput
+        placeholder="Name"
+        name="name"
+        [(ngModel)]="formData.name"
+        required
+      />
+      <mat-error
+        *ngIf="
+          contactForm.controls['name']?.touched &&
+          contactForm.controls['name'].hasError('required')
+        "
+      >
+        Name is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+      <input
+        matInput
+        placeholder="Email"
+        name="email"
+        [(ngModel)]="formData.email"
+        required
+        email
+      />
+      <mat-error
+        *ngIf="
+          contactForm.controls['email']?.touched &&
+          contactForm.controls['email']?.hasError('required')
+        "
+      >
+        Email is required
+      </mat-error>
+      <mat-error *ngIf="contactForm.controls['email']?.hasError('email')">
+        Invalid email address
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+      <input
+        matInput
+        placeholder="Mobile Number"
+        name="mobile"
+        [(ngModel)]="formData.mobile"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+      <textarea
+        matInput
+        placeholder="Message"
+        name="message"
+        [(ngModel)]="formData.message"
+        required
+      ></textarea>
+      <mat-error
+        *ngIf="
+          contactForm.controls['message']?.touched &&
+          contactForm.controls['message'].hasError('required')
+        "
+      >
+        Message is required
+      </mat-error>
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="!contactForm.valid"
+      class="center-button"
+    >
+      Submit
+    </button>
+  </form>
+</div>

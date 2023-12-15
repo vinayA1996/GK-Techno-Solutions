@@ -1,0 +1,33 @@
+/* contact-form.component.css */
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 20px; /* Add margin for spacing */
+}
+
+form {
+  width: 100%;
+  max-width: 400px; /* Adjust the maximum width as needed */
+}
+
+.full-width {
+  width: 100%;
+}
+/* contact.component.css */
+
+:host {
+  animation: display 0.2s ease-in-out;
+}
+@keyframes display {
+  from {
+    transform: translateY(-10%);
+    opacity: 0.1;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

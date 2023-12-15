@@ -4,12 +4,12 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { ServicesComponent } from './services/services.component';
 import { TeamComponent } from './team/team.component';
-import { ButtonModule } from 'primeng/button';
-import { AnimateOnScrollModule } from 'primeng/animateonscroll';
-import { RippleModule } from 'primeng/ripple';
-import { AvatarModule } from 'primeng/avatar';
-import { AvatarGroupModule } from 'primeng/avatargroup';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms'; // Import FormsModule for template-driven forms
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -20,12 +20,12 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    ButtonModule,
-    AnimateOnScrollModule,
-    RippleModule,
-    AvatarModule,
-    AvatarGroupModule,
     RouterModule,
+    MatCardModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
   ],
   exports: [HomeComponent],
 })
