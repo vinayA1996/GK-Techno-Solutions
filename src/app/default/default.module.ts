@@ -9,6 +9,8 @@ import { AnimateOnScrollModule } from 'primeng/animateonscroll';
 import { RippleModule } from 'primeng/ripple';
 import { AvatarModule } from 'primeng/avatar';
 import { AvatarGroupModule } from 'primeng/avatargroup';
+import { RouterModule } from '@angular/router';
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -23,6 +25,7 @@ import { AvatarGroupModule } from 'primeng/avatargroup';
     RippleModule,
     AvatarModule,
     AvatarGroupModule,
+    RouterModule,
   ],
   exports: [HomeComponent],
 })
