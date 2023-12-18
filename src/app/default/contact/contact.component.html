@@ -1,21 +1,13 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-12">
       <div class="details-container">
-        <div class="title" style="text-align: center">
-          <h1>Contact Us</h1>
-          <hr
-            style="
-              width: 10%;
-              margin: 0 auto;
-              border-width: 5px;
-              border: 3px solid rgb(0, 0, 0);
-              opacity: 1;
-            "
-          />
+        <div class="title">
+          <h1 style="text-align: center; margin-top: 1%;" >Contact Us</h1>
+
         </div>
-        <div class="container">
-          <div class="para" style="text-align: center; margin-top: 1%">
+        <div >
+          <div class="para" >
             <p>
               Feel free to get in touch with us at GK Techno Solutions. We value
               your inquiries and are here to provide information or assistance.
@@ -30,86 +22,105 @@
         </div>
       </div>
     </div>
-    <div class="col-md-4">
-      <div class="card">
-        <div class="card-body">
-          <h5>Message Us</h5>
-          <form
-            #contactForm="ngForm"
-            (ngSubmit)="submitForm(contactForm)"
-            class="form-container"
-          >
-            <mat-form-field class="full-width" appearance="fill">
-              <input
-                matInput
-                placeholder="Name"
-                name="name"
-                [(ngModel)]="formData.name"
-                required
-              />
-              <mat-error
-                *ngIf="
-                  contactForm.controls['name']?.touched &&
-                  contactForm.controls['name'].hasError('required')
-                "
-              >
-                Name is required
-              </mat-error>
-            </mat-form-field>
+    <div >
+      <div class="row">
+        <div class="col-md-6">
+          <div class="row">
+            <h5>Address </h5>
+            <p>Office no 6 ishwar kripa complex railway station
+              road,katni,(M.P)</p>
+          </div>
+          <div class="row">
+            <h5>Phone </h5>
+            <p>+91 6266377832</p>
+          </div>
 
-            <mat-form-field class="full-width" appearance="fill">
-              <input
-                matInput
-                placeholder="Email"
-                name="email"
-                [(ngModel)]="formData.email"
-                required
-                email
-              />
-              <mat-error
-                *ngIf="
-                  contactForm.controls['email']?.touched &&
-                  contactForm.controls['email']?.hasError('required')
-                "
-              >
-                Email is required
-              </mat-error>
-              <mat-error
-                *ngIf="contactForm.controls['email']?.hasError('email')"
-              >
-                Invalid email address
-              </mat-error>
-            </mat-form-field>
-
-            <mat-form-field class="full-width" appearance="fill">
-              <textarea
-                matInput
-                placeholder="Message"
-                name="message"
-                [(ngModel)]="formData.message"
-                required
-              ></textarea>
-              <mat-error
-                *ngIf="
-                  contactForm.controls['message']?.touched &&
-                  contactForm.controls['message'].hasError('required')
-                "
-              >
-                Message is required
-              </mat-error>
-            </mat-form-field>
-
-            <button
-              mat-raised-button
-              color="primary"
-              type="submit"
-              [disabled]="!contactForm.valid"
-              class="center-button"
-            >
-              Submit
-            </button>
-          </form>
+          <div class="row">
+            <h5>Email </h5><br>
+            <a class="anchor" href="mailto:gktechnosolutionspvtltd@gmail.com">gktechnosolutionspvtltd&#64;gmail.com</a>
+          </div>
         </div>
+        <div class="card col-md-6" >
+          <div class="card-body">
+            <h5>Message Us</h5>
+            <form
+              #contactForm="ngForm"
+              (ngSubmit)="submitForm(contactForm)"
+              class="form-container"
+            >
+              <mat-form-field class="full-width" appearance="fill">
+                <input
+                  matInput
+                  placeholder="Name"
+                  name="name"
+                  [(ngModel)]="formData.name"
+                  required
+                />
+                <mat-error
+                  *ngIf="
+                    contactForm.controls['name']?.touched &&
+                    contactForm.controls['name'].hasError('required')
+                  "
+                >
+                  Name is required
+                </mat-error>
+              </mat-form-field>
+
+              <mat-form-field class="full-width" appearance="fill">
+                <input
+                  matInput
+                  placeholder="Email"
+                  name="email"
+                  [(ngModel)]="formData.email"
+                  required
+                  email
+                />
+                <mat-error
+                  *ngIf="
+                    contactForm.controls['email']?.touched &&
+                    contactForm.controls['email']?.hasError('required')
+                  "
+                >
+                  Email is required
+                </mat-error>
+                <mat-error
+                  *ngIf="contactForm.controls['email']?.hasError('email')"
+                >
+                  Invalid email address
+                </mat-error>
+              </mat-form-field>
+
+              <mat-form-field class="full-width" appearance="fill">
+                <textarea
+                  matInput
+                  placeholder="Message"
+                  name="message"
+                  [(ngModel)]="formData.message"
+                  required
+                ></textarea>
+                <mat-error
+                  *ngIf="
+                    contactForm.controls['message']?.touched &&
+                    contactForm.controls['message'].hasError('required')
+                  "
+                >
+                  Message is required
+                </mat-error>
+              </mat-form-field>
+
+              <button
+                mat-raised-button
+                color="primary"
+                type="submit"
+                [disabled]="!contactForm.valid"
+                class="center-button"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
