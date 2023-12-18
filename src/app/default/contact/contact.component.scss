@@ -24,18 +24,11 @@ form {
     opacity: 1;
   }
 }
-.title {
-  text-align: center !important;
-}
 
-.title {
-  text-align: center;
-}
 
-.container {
-  text-align: center;
-  margin-top: 1%;
-}
+
+
+
 .contact-container {
   padding: 50px;
 }
@@ -58,4 +51,11 @@ form {
 .card {
   background: #ffffff;
   box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
+  width: 400px;
+  height: 400px;
+}
+.anchor
+{
+  text-decoration: none;
+  color: black;
 }
