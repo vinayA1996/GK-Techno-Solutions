@@ -1,5 +1,15 @@
-.container-fluid {
-  margin-top: 20px; /* Adjust margin as needed */
+.background-container {
+  background-image: url("/assets/images/bg.jpg"); /* Adjust the path accordingly */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  // background-attachment: fixed; /* Add this line for a fixed background */
+  height: 100vh; /* Adjust the height as needed */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .navbar-nav {
@@ -7,8 +17,7 @@
   justify-content: space-between;
 }
 .text {
-  /* Move image/text 50% off-screen initially */
-  animation: slide-in-top 1s ease-in-out; /* Define animation duration and timing */
+  animation: slide-in-top 1s ease-in-out;
 }
 .image {
   /* Move image/text 50% off-screen initially */
@@ -17,7 +26,7 @@
 @keyframes slide-in-top {
   from {
     opacity: 1;
-    transform: translateY(-70%);
+    transform: translateY(-250%);
   }
   to {
     opacity: 1;
@@ -52,7 +61,7 @@ button {
   outline: none;
   cursor: pointer;
   border: none;
-  padding: 0.5rem 2rem;
+  padding: 0.3rem 1rem;
   margin: 0;
   font-family: inherit;
   font-size: inherit;
@@ -61,7 +70,7 @@ button {
   letter-spacing: 0.05rem;
   font-weight: 700;
   font-size: 17px;
-  border-radius: 500px;
+  // border-radius: 500px;
   overflow: hidden;
   background: #000752;
   color: rgb(0, 0, 0);

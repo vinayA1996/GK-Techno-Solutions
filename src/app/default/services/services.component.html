@@ -1,1 +1,20 @@
-<p>services works!</p>
+<div class="title-container">
+  <h1>Our Services</h1>
+</div>
+
+<div class="container">
+  <div class="row" [@cardStagger]="cardInfo.length">
+    <div class="col-md-4" *ngFor="let info of cardInfo">
+      <div class="card" style="width: 18rem; height: 450px">
+        <img class="card-img-top" [src]="info.imgLink" alt="Card image cap" />
+        <div class="card-body">
+          <h5 class="card-title">{{ info.title }}</h5>
+          <p class="card-text">{{ info.text }}</p>
+          <a [href]="info.link" class="btn btn-primary" target="_blank"
+            >Explore Site</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

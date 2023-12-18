@@ -12,3 +12,25 @@
     opacity: 1;
   }
 }
+
+.container {
+  margin-top: 40px;
+}
+.title-container {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: slide-in-top 0.5s ease-in-out;
+}
+
+@keyframes slide-in-top {
+  from {
+    opacity: 1;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

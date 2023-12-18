@@ -10,7 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -26,6 +26,7 @@ import { MatCardModule } from '@angular/material/card';
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
+    NgbCarouselModule,
   ],
   exports: [HomeComponent],
 })
