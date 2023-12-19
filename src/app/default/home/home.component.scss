@@ -1,13 +1,10 @@
 .background-container {
-  background-image: url("/assets/images/bg.jpg"); /* Adjust the path accordingly */
   background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
-  // background-attachment: fixed; /* Add this line for a fixed background */
   height: 100vh; /* Adjust the height as needed */
   display: flex;
   flex-direction: column;
-  align-items: center;
+
   justify-content: center;
   text-align: center;
 }
@@ -70,7 +67,6 @@ button {
   letter-spacing: 0.05rem;
   font-weight: 700;
   font-size: 17px;
-  // border-radius: 500px;
   overflow: hidden;
   background: #000752;
   color: rgb(0, 0, 0);
@@ -107,4 +103,12 @@ button::before {
 
 button:hover::before {
   transform: translate3d(100%, 0, 0);
+}
+.info-container {
+  justify-content: left;
+  text-align: left;
+}
+.service-container {
+  transition: background 0.3s ease; /* Adjust the transition duration as needed */
+  /* Your existing styles */
 }
