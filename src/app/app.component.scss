@@ -1,5 +1,7 @@
 /* your-component.component.css */
-
+.navbar {
+  transition: background-color 0.5s ease; /* Adjust the duration and easing function as needed */
+}
 .navbar-nav li a {
   margin-right: 50px; /* adjust value for desired spacing */
 }

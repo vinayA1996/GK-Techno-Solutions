@@ -15,8 +15,8 @@ export class ContactComponent {
 
   submitForm(form: any) {
     if (form.valid) {
-      // Do something with the form data, e.g., send it to a server
       console.log(this.formData);
+      window.alert('Message sent Successfully!');
     }
   }
 }
