@@ -1,61 +1,113 @@
-/* contact-form.component.css */
-
-form {
-  width: 100%;
-  max-width: 400px; /* Adjust the maximum width as needed */
+.contact {
+  position: relative;
+  padding: 60px 0;
+  background: #f2f2f2;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
-
-.full-width {
-  width: 100%;
-}
-/* contact.component.css */
-
-:host {
-  animation: display 0.2s ease-in-out;
-}
-@keyframes display {
-  from {
-    transform: translateY(-10%);
-    opacity: 0.1;
-  }
-
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-
-
-
-
-.contact-container {
-  padding: 50px;
-}
-
-@media (min-width: 768px) {
-  .vl {
-    border-right: 3px solid #848b93;
-    height: auto;
-  }
-}
-@media (max-width: 768px) {
-  .row {
-    flex-direction: column;
-  }
-
-  .divider-vertical {
-    display: none;
-  }
-}
-.card {
-  background: #ffffff;
-  box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
-  width: 400px;
-  height: 400px;
-}
-.anchor
-{
+a{
   text-decoration: none;
-  color: black;
+}
+
+.contact .container {
+  max-width: 900px;
+}
+
+.contact .contact-info {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.contact .contact-address,
+.contact .contact-phone,
+.contact .contact-email {
+  background: #ffffff;
+  padding: 15px 30px 25px 30px;
+  text-align: center;
+  color: #353535;
+}
+
+.contact .contact-address:hover,
+.contact .contact-phone:hover,
+.contact .contact-email:hover {
+  box-shadow: 0 0 10px #dddddd;
+}
+
+.contact .contact-info i {
+  font-size: 48px;
+  display: inline-block;
+  color: #1dbf73;
+}
+
+.contact .contact-info address,
+.contact .contact-info p {
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #353535;
+}
+
+.contact .contact-info h3 {
+  font-size: 14px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  color: #353535;
+}
+
+.contact .contact-info a {
+  color: #353535;
+}
+
+.contact .contact-info a:hover {
+  color: #1dbf73;
+}
+
+.contact .map {
+  position: relative;
+  background: #ffffff;
+}
+
+.contact .map:hover {
+  box-shadow: 0 0 10px #cccccc;
+}
+
+.contact .map iframe {
+  width: 100%;
+  height: 380px;
+  margin-bottom: -7px;
+}
+
+.contact .form {
+  background: #ffffff;
+  padding: 30px;
+  color: #353535;
+}
+
+.contact .form:hover {
+  box-shadow: 0 0 10px #dddddd;
+}
+
+.contact .form input,
+.contact .form textarea {
+  padding: 10px 14px;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 15px;
+}
+
+.contact .form input:focus,
+.contact .form textarea:focus {
+  border-color: #1dbf73;
+}
+
+.contact .form button[type="submit"] {
+  background: #1dbf73;
+  border: 0;
+  padding: 10px 30px;
+  color: #ffffff;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.contact .form button[type="submit"]:hover {
+  background: #353535;
 }
