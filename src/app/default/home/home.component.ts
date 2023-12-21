@@ -1,12 +1,33 @@
 import { Component, HostListener } from '@angular/core';
+import {
+  trigger,
+  state,
+  style,
+  transition,
+  animate,
+} from '@angular/animations';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
+  animations: [
+    trigger('slideLeft', [
+      state('void', style({ opacity: 0, transform: 'translateX(-50px)' })),
+      state('*', style({ opacity: 1, transform: 'translateX(0)' })),
+      transition('void => *', animate('500ms ease-out')),
+    ]),
+    trigger('slideRight', [
+      state('void', style({ opacity: 0, transform: 'translateX(50px)' })),
+      state('*', style({ opacity: 1, transform: 'translateX(0)' })),
+      transition('void => *', animate('500ms ease-out')),
+    ]),
+  ],
 })
 export class HomeComponent {
   isScrolled: boolean = false;
+  public infoAnimated = false;
+  public imgAnimated = false;
   scrollPosition: number = 0;
   carouselInfo = {
     title: 'Gk Music',
@@ -35,7 +56,6 @@ export class HomeComponent {
   }
 
   getBackgroundOpacity() {
-    // Adjust this calculation based on your design preference
-    return Math.min(this.scrollPosition / 2000, 1); // Change 200 and 0.8 to suitable values
+    return Math.min(this.scrollPosition / 1500, 1);
   }
 }

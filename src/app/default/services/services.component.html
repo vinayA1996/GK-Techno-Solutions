@@ -1,8 +1,8 @@
 <div class="title-container">
-  <h1>Our Services</h1>
+  <h1 style="color: #5e2ced">Our Services</h1>
 </div>
 
-<div class="container">
+<div class="container" #container>
   <div class="row" [@cardStagger]="cardInfo.length">
     <div class="col-md-4" *ngFor="let info of cardInfo">
       <div class="card" style="width: 18rem; height: 450px">
@@ -10,9 +10,18 @@
         <div class="card-body">
           <h5 class="card-title">{{ info.title }}</h5>
           <p class="card-text">{{ info.text }}</p>
-          <a [href]="info.link" class="btn btn-primary" target="_blank"
-            >Explore Site</a
+          <a
+            [href]="info.link"
+            class="btn"
+            style="
+              border: solid 2px #5e2ced;
+              color: #5e2ced;
+              transition: background-color 0.3s;
+            "
+            target="_blank"
           >
+            Explore Site
+          </a>
         </div>
       </div>
     </div>
