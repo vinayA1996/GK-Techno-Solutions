@@ -23,7 +23,7 @@ import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 })
 export class AppComponent {
   title = 'gkTechnoSolutions';
-  navbarColor: string = '#e1aa7f';
+  navbarColor: string = '#000000';
   constructor(private router: Router, private route: ActivatedRoute) {
     // Subscribe to router events to detect route changes
     this.router.events.subscribe((event) => {
@@ -40,20 +40,16 @@ export class AppComponent {
     // Set the background color based on the current route
     switch (currentRoute) {
       case 'home':
-        this.navbarColor = '#ffffff'; // Set the color for the home route
+        this.navbarColor = '#000000'; // Set the color for the home route
         break;
       case 'services':
-        this.navbarColor = '#ffffff'; // Set the color for the services route
+        this.navbarColor = '#000000'; // Set the color for the services route
         break;
       case 'team':
-        this.navbarColor = '#ffffff'; // Set the color for the services route
+        this.navbarColor = '#000000'; // Set the color for the services route
         break;
       case 'team':
-        this.navbarColor = '#f2f2f2c2'; // Set the color for the services route
-        break;
-      // Add cases for other routes as needed
-      default:
-        this.navbarColor = '#f2f2f2'; // Default color
+        this.navbarColor = '#000000'; // Set the color for the services route
         break;
     }
   }

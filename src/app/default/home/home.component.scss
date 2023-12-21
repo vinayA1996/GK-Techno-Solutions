@@ -4,9 +4,8 @@
   height: 100vh; /* Adjust the height as needed */
   display: flex;
   flex-direction: column;
-
   justify-content: center;
-  text-align: center;
+  text-align: left;
 }
 
 .navbar-nav {
@@ -57,7 +56,8 @@
 button {
   outline: none;
   cursor: pointer;
-  border: none;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 5px;
   padding: 0.3rem 1rem;
   margin: 0;
   font-family: inherit;
@@ -68,7 +68,7 @@ button {
   font-weight: 700;
   font-size: 17px;
   overflow: hidden;
-  background: #000752;
+  background: #5e2ced;
   color: rgb(0, 0, 0);
 }
 
@@ -106,8 +106,21 @@ button:hover::before {
 }
 .info-container {
   justify-content: left;
-  text-align: left;
+  text-align: left !important;
 }
 .service-container {
+  text-align: left;
+  min-height: 90vh; /* Ensure the container takes at least the full height of the viewport */
   transition: background 0.3s ease;
+}
+.aboutus-info {
+  text-align: left;
+}
+.aboutus-info .info {
+  margin-top: 20px;
+}
+
+:host ::ng-deep .ngb-carousel-control-prev,
+:host ::ng-deep .ngb-carousel-control-next {
+  color: red !important;
 }

@@ -1,4 +1,11 @@
-import { Component, OnInit, Renderer2, ElementRef } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Renderer2,
+  ElementRef,
+  ViewChild,
+  AfterViewInit,
+} from '@angular/core';
 import {
   trigger,
   transition,
@@ -32,14 +39,23 @@ import {
     ]),
   ],
 })
-export class ServicesComponent implements OnInit {
+export class ServicesComponent implements OnInit, AfterViewInit {
+  @ViewChild('container') container: ElementRef;
   ngOnInit(): void {
     const container = this.el.nativeElement.querySelector('.container');
     if (container) {
       this.renderer.setProperty(container, 'scrollTop', 0);
     }
   }
-
+  ngAfterViewInit() {
+    // Scroll to the top when the component is initialized
+    this.scrollToTop();
+  }
+  scrollToTop() {
+    if (this.container) {
+      this.container.nativeElement.scrollTop = 0;
+    }
+  }
   constructor(private renderer: Renderer2, private el: ElementRef) {}
   cardInfo = [
     {

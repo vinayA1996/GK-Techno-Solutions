@@ -1,110 +1,136 @@
-<div class="container-fluid">
-  <div class="row" style="overflow: hidden">
-    <div class="background-container">
-      <div class="row">
-        <div class="col-md-6">
-          <div>
-            <h1
-              style="
-                font-size: 60px;
-                color: #000752;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                text-align: left;
-              "
-              class="text"
-            >
-              GK Techno Solutions
-            </h1>
-            <p
-              style="
-                text-align: left;
-                line-height: 2;
-                font-weight: 600;
-                color: gray;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              "
-            >
-              At GK Techno Solutions, we are the driving force behind a diverse
-              portfolio of innovative ventures. With a commitment to excellence,
-              we bring you a blend of technology, music, e-commerce, and
-              hospitality through our subsidiaries - GK Music, GK Dukkan, and
-              Spring Hotel.
-            </p>
+<div [style.background]="'rgb(251, 251, 253, ' + getBackgroundOpacity() + ')'">
+  <div class="container-fluid">
+    <div class="row container" style="overflow: hidden">
+      <div class="background-container">
+        <div class="row">
+          <div class="col-md-6">
+            <div>
+              <h1
+                style="
+                  font-size: 60px;
+                  color: #5e2ced;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                  text-align: left;
+                "
+                class="text"
+              >
+                GK Techno Solutions
+              </h1>
+              <p
+                style="
+                  text-align: left;
+                  line-height: 2;
+                  font-weight: 600;
+                  color: gray;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                "
+              >
+                At GK Techno Solutions, we are the driving force behind a
+                diverse portfolio of innovative ventures. With a commitment to
+                excellence, we bring you a blend of technology, music,
+                e-commerce, and hospitality through our subsidiaries - GK Music,
+                GK Dukkan, and Spring Hotel.
+              </p>
+            </div>
+
+            <button [routerLink]="['/contact']"><span>Contact Us</span></button>
           </div>
-
-          <button [routerLink]="['/contact']"><span>Contact Us</span></button>
-        </div>
-        <div class="col-md-6"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div
-  class="service-container"
-  [class.scrolled]="scrollPosition > 0"
-  [style.background]="'rgba(255, 255, 255, ' + getBackgroundOpacity() + ')'"
->
-  <hr />
-  <div
-    class="d-flex"
-    style="align-items: center; text-align: center; justify-content: center"
-  >
-    <h1>Our Services</h1>
-  </div>
-  <hr />
-  <br />
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <ngb-carousel (slid)="doneSlide($event)" [interval]="2000">
-          <ng-template ngbSlide>
-            <div class="picsum-img-wrapper">
-              <img
-                src="/assets/images/gkmusic.jpg"
-                alt="Random first slide"
-                class="img-fluid"
-              />
-            </div>
-          </ng-template>
-          <ng-template ngbSlide>
-            <div class="picsum-img-wrapper">
-              <img
-                src="/assets/images/gkdukaan.jpg"
-                alt="Random second slide"
-                class="img-fluid"
-              />
-            </div>
-          </ng-template>
-          <ng-template ngbSlide>
-            <div class="picsum-img-wrapper">
-              <img
-                src="/assets/images/springs.jpg"
-                alt="Random third slide"
-                class="img-fluid"
-              />
-            </div>
-          </ng-template>
-        </ngb-carousel>
-      </div>
-      <div class="col-md-6">
-        <div class="info-container">
-          <h1>{{ carouselInfo.title }}</h1>
-          <h5>{{ carouselInfo.text }}</h5>
-        </div>
-        <div>
-          <button [routerLink]="['/services']">
-            <span>Explore More</span>
-          </button>
+          <div class="col-md-6"></div>
         </div>
       </div>
     </div>
   </div>
-  <hr />
-</div>
-<div class="aboutus-info">
-  <div class="container">
-    <div class="col-md-6"></div>
-    <div class="col-md-6"></div>
+  <div>
+    <div class="service-container" style="height: 800px">
+      <!-- <hr />
+    <div
+      class="d-flex"
+      style="align-items: center; text-align: center; justify-content: center"
+    >
+      <h1>Our Services</h1>
+    </div>
+    <hr /> -->
+      <br />
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <ngb-carousel (slid)="doneSlide($event)" [interval]="2000">
+              <ng-template ngbSlide>
+                <div class="picsum-img-wrapper">
+                  <img
+                    src="/assets/images/gkmusic.jpg"
+                    alt="Random first slide"
+                    class="img-fluid"
+                  />
+                </div>
+              </ng-template>
+              <ng-template ngbSlide>
+                <div class="picsum-img-wrapper">
+                  <img
+                    src="/assets/images/gkdukaan.jpg"
+                    alt="Random second slide"
+                    class="img-fluid"
+                  />
+                </div>
+              </ng-template>
+              <ng-template ngbSlide>
+                <div class="picsum-img-wrapper">
+                  <img
+                    src="/assets/images/springs.jpg"
+                    alt="Random third slide"
+                    class="img-fluid"
+                  />
+                </div>
+              </ng-template>
+            </ngb-carousel>
+          </div>
+          <div class="col-md-6">
+            <div class="info-container">
+              <h1 style="color: #5e2ced">{{ carouselInfo.title }}</h1>
+              <h5>{{ carouselInfo.text }}</h5>
+            </div>
+            <div>
+              <button [routerLink]="['/services']">
+                <span>Explore More</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <hr /> -->
+    </div>
+    <div class="aboutus-info" style="height: 500px">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="info slide-left">
+              <h1 style="color: #5e2ced">
+                Innovate, Integrate, Elevate: The GK Techno Solutions Saga
+              </h1>
+              <p>
+                At GK Techno Solutions, we embody a vibrant team of creative
+                minds dedicated to driving innovation and excellence across a
+                diverse portfolio of ventures. Our commitment to excellence is
+                evident in the unique fusion of technology, music, e-commerce,
+                and hospitality that defines our subsidiaries - GK Music, GK
+                Dukkan, and Spring Hotel. As trailblazers in the industry, we
+                take pride in delivering cutting-edge solutions and services
+                that transcend conventional boundaries.
+              </p>
+            </div>
+            <button [routerLink]="['/team']">
+              <span>About us</span>
+            </button>
+          </div>
+          <div class="col-md-6">
+            <img
+              src="/assets/images/about.png"
+              alt="about"
+              class="img-fluid slide-right"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
