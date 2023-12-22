@@ -104,11 +104,11 @@ a {
 
 .contact .form input:focus,
 .contact .form textarea:focus {
-  border-color: #1dbf73;
+  border-color: #822ced;
 }
 
 .contact .form button[type="submit"] {
-  background: #1dbf73;
+  background: #822ced;
   border: 0;
 
   color: #ffffff;
@@ -140,5 +140,44 @@ a {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+//*************loader-----------------
+.loader svg {
+  width: 3.25em;
+  transform-origin: center;
+  animation: rotate4 2s linear infinite;
+}
+
+circle {
+  fill: none;
+  stroke: #822ced;
+  stroke-width: 2;
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  animation: dash4 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate4 {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash4 {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dasharray: 90, 200;
+    stroke-dashoffset: -35px;
+  }
+
+  100% {
+    stroke-dashoffset: -125px;
   }
 }

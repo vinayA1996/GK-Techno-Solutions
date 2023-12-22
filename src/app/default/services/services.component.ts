@@ -46,6 +46,7 @@ export class ServicesComponent implements OnInit, AfterViewInit {
     if (container) {
       this.renderer.setProperty(container, 'scrollTop', 0);
     }
+    this.scrollToTop1();
   }
   ngAfterViewInit() {
     // Scroll to the top when the component is initialized
@@ -77,4 +78,8 @@ export class ServicesComponent implements OnInit, AfterViewInit {
       link: 'http://www.spring.in',
     },
   ];
+
+  scrollToTop1() {
+    window.scroll({ top: 0, behavior: 'smooth' });
+  }
 }
