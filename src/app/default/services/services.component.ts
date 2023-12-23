@@ -67,15 +67,15 @@ export class ServicesComponent implements OnInit, AfterViewInit {
     },
     {
       title: 'Gk Dukaan',
-      text: 'An E-Commerce WebSite',
+      text: 'Gkdukaan is a dynamic multi-vendor e-commerce platform, offering a wide range of products for online purchase.',
       imgLink: '/assets/images/gkdukaan.jpg',
       link: 'http://www.gkdukaan.com',
     },
     {
-      title: 'Spring Restaurant',
-      text: 'An Hotel in goa',
+      title: 'Spring Hotel',
+      text: "Experience the charm of Goa's vibrant harbour with us! 🌊 Our hotel, offers you the perfect base within walking distance of major attractions. ",
       imgLink: '/assets/images/springs.jpg',
-      link: 'http://www.spring.in',
+      link: '',
     },
   ];
 

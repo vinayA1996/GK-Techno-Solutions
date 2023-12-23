@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import {
   trigger,
   state,
@@ -24,7 +24,10 @@ import {
     ]),
   ],
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+  ngOnInit(): void {
+    this.scrollToTop();
+  }
   isScrolled: boolean = false;
   public infoAnimated = false;
   public imgAnimated = false;
@@ -42,11 +45,13 @@ export class HomeComponent {
     }
     if (eve.current == 'ngb-slide-1') {
       this.carouselInfo.title = 'Gk Dukaan';
-      this.carouselInfo.text = 'An ecommerce service';
+      this.carouselInfo.text =
+        'Gkdukaan is a dynamic multi-vendor e-commerce platform, offering a wide range of products for online purchase';
     }
     if (eve.current == 'ngb-slide-2') {
-      this.carouselInfo.title = 'Spring Restaurant';
-      this.carouselInfo.text = 'An hotel in goa';
+      this.carouselInfo.title = 'Spring Hotel';
+      this.carouselInfo.text =
+        "Experience the charm of Goa's vibrant harbour with us! 🌊 Our hotel, nestled in the heart of Goa";
     }
   }
 
@@ -57,5 +62,8 @@ export class HomeComponent {
 
   getBackgroundOpacity() {
     return Math.min(this.scrollPosition / 1500, 1);
+  }
+  scrollToTop() {
+    window.scroll({ top: 0, behavior: 'smooth' });
   }
 }
