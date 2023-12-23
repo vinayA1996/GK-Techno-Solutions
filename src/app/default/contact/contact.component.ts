@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit {
   @ViewChild('contactForm', { static: true }) contactForm: NgForm;
   showloader: boolean = false;
   formData = {
@@ -17,6 +17,10 @@ export class ContactComponent {
     message: '',
   };
   constructor(private http: HttpClient) {}
+  ngOnInit(): void {
+    this.scrollToTop();
+  }
+
   submitForm() {
     const formPayload = {
       access_key: '3f07c4bf-133b-4d95-8aec-0b2a3410f96d',
@@ -40,5 +44,8 @@ export class ContactComponent {
         window.console.error('ERROR In Sending message:');
       }
     );
+  }
+  scrollToTop() {
+    window.scroll({ top: 0, behavior: 'smooth' });
   }
 }
