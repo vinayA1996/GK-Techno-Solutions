@@ -16,6 +16,7 @@
       aria-controls="navbarNav"
       aria-expanded="false"
       aria-label="Toggle navigation"
+      style="background-color: white; border-color: white"
     >
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -86,15 +87,6 @@
               novalidate="true"
               _lpchecked="1"
             >
-              <input
-                type="text"
-                name="EMAIL"
-                class="form-control memail"
-                placeholder="Email"
-              />
-              <button class="btn btn_get btn_get_two" type="submit">
-                Subscribe
-              </button>
               <p class="mchimp-errmessage" style="display: none"></p>
               <p class="mchimp-sucmessage" style="display: none"></p>
             </form>
@@ -112,11 +104,10 @@
           >
             <h3 class="f-title f_600 t_color f_size_18">Download</h3>
             <ul class="list-unstyled f_list">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Meet the Team</a></li>
-              <li><a href="#">Contact Us</a></li>
+              <li><a routerLink="/home">Home</a></li>
+              <li><a routerLink="/team">About Us</a></li>
+              <li><a routerLink="/services">Services</a></li>
+              <li><a routerLink="/contact">Contact Us</a></li>
             </ul>
           </div>
         </div>
@@ -132,8 +123,22 @@
           >
             <h3 class="f-title f_600 t_color f_size_18">Help</h3>
             <ul class="list-unstyled f_list">
-              <li><a href="#">FAQ</a></li>
-              <li><a href="#">Term &amp; conditions</a></li>
+              <li>
+                <a
+                  data-bs-toggle="modal"
+                  data-bs-target="#FAQ_modal"
+                  style="cursor: pointer"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a
+                  data-bs-toggle="modal"
+                  data-bs-target="#termsModal"
+                  style="cursor: pointer"
+                  >Term &amp; conditions</a
+                >
+              </li>
             </ul>
           </div>
         </div>
@@ -173,4 +178,145 @@
     </div>
   </div>
 </footer>
+
+<!-- Modal For FAQ -->
+<div
+  class="modal fade"
+  id="FAQ_modal"
+  tabindex="-1"
+  aria-labelledby="FAQ_modalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div
+        class="modal-header d-flex justify-content-between align-items-center"
+      >
+        <h1 class="modal-title fs-5" id="exampleModalLabel">FAQ</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p>
+          <strong>1. What is GK Techno Solutions?</strong><br />
+          GK Techno Solutions is the driving force behind a diverse portfolio of
+          innovative ventures. We specialize in technology, music, e-commerce,
+          and hospitality.
+        </p>
+
+        <p>
+          <strong>2. What subsidiaries does GK Techno Solutions have?</strong
+          ><br />
+          Our subsidiaries include GK Music, GK Dukkan, and Spring Hotel, each
+          contributing to different aspects of our diverse offerings.
+        </p>
+
+        <p>
+          <strong>3. How does GK Techno Solutions ensure excellence?</strong
+          ><br />
+          At GK Techno Solutions, we are committed to excellence in all our
+          ventures. We prioritize quality and innovation to deliver the best to
+          our customers.
+        </p>
+
+        <p>
+          <strong>4. What services does GK Music provide?</strong><br />
+          GK Music is one of our subsidiaries that focuses on providing
+          exceptional musical experiences. From events to online platforms, we
+          cater to music enthusiasts.
+        </p>
+
+        <p>
+          <strong>5. How can I engage with GK Techno Solutions?</strong><br />
+          You can engage with us through our various platforms and services.
+          Explore our website and subsidiaries to discover the exciting
+          offerings we have for you.
+        </p>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Terms and conditon modals -->
+<div>
+  <div
+    class="modal fade"
+    id="termsModal"
+    tabindex="-1"
+    aria-labelledby="termsModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div
+          class="modal-header d-flex justify-content-between align-items-center"
+        >
+          <h1 class="modal-title fs-5" id="exampleModalLabel">
+            Terms & Conditions
+          </h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>1. Acceptance of Terms</strong></p>
+          <p>
+            By accessing or using the services provided by GK Techno Solutions,
+            you agree to comply with these terms and conditions. If you do not
+            agree with any part of these terms, you may not use our services.
+          </p>
+
+          <p><strong>2. Privacy Policy</strong></p>
+          <p>
+            Our Privacy Policy outlines how we collect, use, and protect your
+            personal information. By using our services, you consent to the
+            terms outlined in our Privacy Policy.
+          </p>
+
+          <p><strong>3. Intellectual Property</strong></p>
+          <p>
+            All content, trademarks, and intellectual property on the site are
+            owned by GK Techno Solutions. You may not use, reproduce, or
+            distribute our content without explicit permission.
+          </p>
+
+          <p><strong>4. User Conduct</strong></p>
+          <p>
+            Users are expected to conduct themselves in a respectful manner when
+            using our platforms. Any form of harassment, abusive language, or
+            unauthorized use of our services may result in account termination.
+          </p>
+
+          <p><strong>5. Disclaimer of Warranty</strong></p>
+          <p>
+            We do not guarantee the accuracy or reliability of information
+            provided on our site. The use of our services is at your own risk,
+            and we are not responsible for any damages or losses incurred.
+          </p>
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <app-scroll-to-top></app-scroll-to-top>
