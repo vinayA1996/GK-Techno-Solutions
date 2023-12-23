@@ -13,5 +13,4 @@ export class TeamComponent implements OnInit {
   scrollToTop() {
     window.scroll({ top: 0, behavior: 'smooth' });
   }
-  xc;
 }

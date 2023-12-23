@@ -23,7 +23,7 @@ export class ContactComponent implements OnInit {
 
   submitForm() {
     const formPayload = {
-      access_key: '3f07c4bf-133b-4d95-8aec-0b2a3410f96d',
+      access_key: 'f436eb69-20c1-42c0-b75b-a29ed68ba07c',
       name: this.formData.name,
       email: this.formData.email,
       message: this.formData.message,
