@@ -247,3 +247,12 @@ router-outlet {
   font-weight: 600;
   font-size: 18px !important;
 }
+.footer_bottom {
+  background-color: black;
+  color: white; /* Set text color to white or any contrasting color */
+  width: 100%;
+}
+
+.footer_bottom p {
+  margin-bottom: 0;
+}

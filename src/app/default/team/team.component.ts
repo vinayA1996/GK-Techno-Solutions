@@ -11,7 +11,7 @@ export class TeamComponent implements OnInit {
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       // Check if running in a browser environment before using window
-      this.scrollToTop();
+      // this.scrollToTop();
     }
   }
 
