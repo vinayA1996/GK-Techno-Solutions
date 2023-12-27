@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-team',
@@ -6,8 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./team.component.scss'], // Fix: Use 'styleUrls' instead of 'styleUrl'
 })
 export class TeamComponent implements OnInit {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
   ngOnInit(): void {
-    this.scrollToTop();
+    if (isPlatformBrowser(this.platformId)) {
+      // Check if running in a browser environment before using window
+      this.scrollToTop();
+    }
   }
 
   scrollToTop() {

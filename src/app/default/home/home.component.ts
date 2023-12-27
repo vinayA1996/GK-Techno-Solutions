@@ -1,4 +1,11 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import {
+  Component,
+  HostListener,
+  OnInit,
+  Inject,
+  PLATFORM_ID,
+} from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import {
   trigger,
   state,
@@ -6,7 +13,7 @@ import {
   transition,
   animate,
 } from '@angular/animations';
-
+import { Meta } from '@angular/platform-browser';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -25,8 +32,30 @@ import {
   ],
 })
 export class HomeComponent implements OnInit {
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private meta: Meta
+  ) {}
   ngOnInit(): void {
-    this.scrollToTop();
+    if (isPlatformBrowser(this.platformId)) {
+      // Check if running in a browser environment before using window
+      this.scrollToTop();
+      this.meta.updateTag({
+        name: 'title',
+        content: 'GK Techno Solutions - Innovative Ventures',
+      });
+      this.meta.updateTag({
+        name: 'description',
+        content:
+          'Explore a diverse portfolio of innovative ventures at GK Techno Solutions.',
+      });
+      this.meta.updateTag({
+        name: 'keywords',
+        content:
+          'GK Music,GK Dukkan,Spring Hotel,Multifaceted ventures,E-commerce ventures',
+      });
+      this.meta.updateTag({ name: 'author', content: 'Ashish Malviya' });
+    }
   }
   isScrolled: boolean = false;
   public infoAnimated = false;

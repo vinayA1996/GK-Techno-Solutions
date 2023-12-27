@@ -5,7 +5,10 @@ import {
   ElementRef,
   ViewChild,
   AfterViewInit,
+  Inject,
+  PLATFORM_ID,
 } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import {
   trigger,
   transition,
@@ -46,7 +49,10 @@ export class ServicesComponent implements OnInit, AfterViewInit {
     if (container) {
       this.renderer.setProperty(container, 'scrollTop', 0);
     }
-    this.scrollToTop1();
+    if (isPlatformBrowser(this.platformId)) {
+      // Check if running in a browser environment before using window
+      this.scrollToTop1();
+    }
   }
   ngAfterViewInit() {
     // Scroll to the top when the component is initialized
@@ -57,7 +63,12 @@ export class ServicesComponent implements OnInit, AfterViewInit {
       this.container.nativeElement.scrollTop = 0;
     }
   }
-  constructor(private renderer: Renderer2, private el: ElementRef) {}
+
+  constructor(
+    private renderer: Renderer2,
+    private el: ElementRef,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
   cardInfo = [
     {
       title: 'Gk Music',

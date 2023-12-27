@@ -6,6 +6,7 @@ import { DefaultModule } from './default/default.module';
 import { RouterLink } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -24,10 +25,29 @@ import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 export class AppComponent {
   title = 'gkTechnoSolutions';
   navbarColor: string = '#000000';
-  constructor(private router: Router, private route: ActivatedRoute) {
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private meta: Meta
+  ) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
       }
     });
+    this.meta.updateTag({
+      name: 'title',
+      content: 'GK Techno Solutions - Innovative Ventures',
+    });
+    this.meta.updateTag({
+      name: 'description',
+      content:
+        'Explore a diverse portfolio of innovative ventures at GK Techno Solutions.',
+    });
+    this.meta.updateTag({
+      name: 'keywords',
+      content:
+        'GK Music,GK Dukkan,Spring Hotel,Multifaceted ventures,E-commerce ventures',
+    });
+    this.meta.updateTag({ name: 'author', content: 'Ashish Malviya' });
   }
 }
