@@ -1,4 +1,11 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  Inject,
+  PLATFORM_ID,
+} from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
@@ -16,9 +23,14 @@ export class ContactComponent implements OnInit {
     mobile: '',
     message: '',
   };
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
   ngOnInit(): void {
-    this.scrollToTop();
+    if (isPlatformBrowser(this.platformId)) {
+      this.scrollToTop();
+    }
   }
 
   submitForm() {
